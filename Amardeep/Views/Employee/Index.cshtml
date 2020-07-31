@@ -1,0 +1,26 @@
+﻿@model  List<EmployeeModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>List of Employees</h2>
+
+<a asp-action="new-employee" asp-controller="employee"> New Employee </a>
+
+<table border="1" class="table table-striped">
+    <tr>
+        <th>EmployeeId</th>
+        <th>Employee Name</th>
+    </tr>
+
+    @{
+        foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.EmployeeId</td>
+                <td>@emp.EmployeeName</td>
+            </tr>
+        }
+    }
+</table>
+

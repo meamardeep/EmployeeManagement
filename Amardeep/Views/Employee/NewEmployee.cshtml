@@ -1,0 +1,22 @@
+﻿@model EmployeeModel
+
+
+<h2>New Employees</h2>
+
+<a asp-action="index" asp-controller="employee">Back to  Employees</a>
+
+@using (Html.BeginForm("saveemployee", "employee", FormMethod.Post))
+{
+<table class="table table-striped">
+    <tr>
+        <td>Employee Name</td>
+        <td>@Html.TextBoxFor(m => m.EmployeeName)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type="submit">Create Employee</button></td>
+    </tr>
+</table>
+
+}
+

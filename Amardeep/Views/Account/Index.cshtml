@@ -1,0 +1,39 @@
+﻿@model UserModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+<div class="mt-1">
+    @using (Html.BeginForm("login", "account", FormMethod.Post))
+    {
+        <table>
+            <tr class="form-horizontal">
+                <td>Username</td>
+                <td>
+                    @Html.TextBoxFor(p1 => p1.Username, new { @class = "form-control" })
+                </td>
+                <td style="color:red">
+                    @Html.ValidationMessageFor(m => m.Username)
+                </td>
+            </tr>
+            <tr class="form-horizontal">
+                <td>Password</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                </td>
+                <td style="color:red">
+                    @Html.ValidationMessageFor(m => m.Password)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1"></td>
+                <td><button type="submit">Login</button></td>
+            </tr>
+
+        </table>
+    }
+
+</div>
